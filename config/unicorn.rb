@@ -1,1 +1,1 @@
-worker_processes 8
+worker_processes 3

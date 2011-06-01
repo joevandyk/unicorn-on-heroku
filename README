@@ -1,0 +1,24 @@
+$ httperf --uri / --server evening-light-786.herokuapp.com --rate 400 --num-conns 2000 --num-calls 5
+httperf --client=0/1 --server=evening-light-786.herokuapp.com --port=80 --uri=/ --rate=400 --send-buffer=4096 --recv-buffer=16384 --num-conns=2000 --num-calls=5
+Maximum connect burst length: 26
+
+Total: connections 2000 requests 10000 replies 10000 test-duration 5.263 s
+
+Connection rate: 380.0 conn/s (2.6 ms/conn, <=169 concurrent connections)
+Connection time [ms]: min 56.8 avg 282.0 max 507.4 median 290.5 stddev 77.5
+Connection time [ms]: connect 4.3
+Connection length [replies/conn]: 5.000
+
+Request rate: 1900.1 req/s (0.5 ms/req)
+Request size [B]: 84.0
+
+Reply rate [replies/s]: min 1908.1 avg 1908.1 max 1908.1 stddev 0.0 (1 samples)
+Reply time [ms]: response 55.5 transfer 0.0
+Reply size [B]: header 155.0 content 29.0 footer 0.0 (total 184.0)
+Reply status: 1xx=0 2xx=10000 3xx=0 4xx=0 5xx=0
+
+CPU time [s]: user 0.14 system 1.35 (user 2.7% system 25.7% total 28.3%)
+Net I/O: 497.3 KB/s (4.1*10^6 bps)
+
+Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
