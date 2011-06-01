@@ -1,24 +1,57 @@
-$ httperf --uri / --server evening-light-786.herokuapp.com --rate 400 --num-conns 2000 --num-calls 5
-httperf --client=0/1 --server=evening-light-786.herokuapp.com --port=80 --uri=/ --rate=400 --send-buffer=4096 --recv-buffer=16384 --num-conns=2000 --num-calls=5
-Maximum connect burst length: 26
+Unicorn benchmark
 
-Total: connections 2000 requests 10000 replies 10000 test-duration 5.263 s
+$ ab -c 100 -n 5000 http://evening-light-786.herokuapp.com/
+This is ApacheBench, Version 2.3 <$Revision: 655654 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Connection rate: 380.0 conn/s (2.6 ms/conn, <=169 concurrent connections)
-Connection time [ms]: min 56.8 avg 282.0 max 507.4 median 290.5 stddev 77.5
-Connection time [ms]: connect 4.3
-Connection length [replies/conn]: 5.000
+Benchmarking evening-light-786.herokuapp.com (be patient)
+Completed 500 requests
+Completed 1000 requests
+Completed 1500 requests
+Completed 2000 requests
+Completed 2500 requests
+Completed 3000 requests
+Completed 3500 requests
+Completed 4000 requests
+Completed 4500 requests
+Completed 5000 requests
+Finished 5000 requests
 
-Request rate: 1900.1 req/s (0.5 ms/req)
-Request size [B]: 84.0
 
-Reply rate [replies/s]: min 1908.1 avg 1908.1 max 1908.1 stddev 0.0 (1 samples)
-Reply time [ms]: response 55.5 transfer 0.0
-Reply size [B]: header 155.0 content 29.0 footer 0.0 (total 184.0)
-Reply status: 1xx=0 2xx=10000 3xx=0 4xx=0 5xx=0
+Server Software:        
+Server Hostname:        evening-light-786.herokuapp.com
+Server Port:            80
 
-CPU time [s]: user 0.14 system 1.35 (user 2.7% system 25.7% total 28.3%)
-Net I/O: 497.3 KB/s (4.1*10^6 bps)
+Document Path:          /
+Document Length:        29 bytes
 
-Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
-Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
+Concurrency Level:      100
+Time taken for tests:   2.157 seconds
+Complete requests:      5000
+Failed requests:        0
+Write errors:           0
+Total transferred:      895179 bytes
+HTML transferred:       145029 bytes
+Requests per second:    2318.37 [#/sec] (mean)
+Time per request:       43.134 [ms] (mean)
+Time per request:       0.431 [ms] (mean, across all concurrent requests)
+Transfer rate:          405.34 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        1    2   1.2      2      31
+Processing:    14   41   8.9     40      87
+Waiting:       14   41   8.9     40      87
+Total:         17   43   8.9     42      89
+
+Percentage of the requests served within a certain time (ms)
+  50%     42
+  66%     46
+  75%     48
+  80%     50
+  90%     54
+  95%     59
+  98%     64
+  99%     67
+ 100%     89 (longest request)
